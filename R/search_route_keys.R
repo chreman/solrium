@@ -33,6 +33,7 @@ keys_high <- c("fl", "fq", "hl", "hl.fl", "hl.alternateField", "hl.alternateFiel
                "hl.regex.slop", "hl.requireFieldMatch", "hl.requireFieldMatch",
                "hl.simple.post", "hl.simple.post", "hl.simple.pre",
                "hl.simple.pre", "hl.snippets", "hl.useFastVectorHighlighter",
+               "hl.tag.ellipsis",
                "hl.useFastVectorHighlighter", "hl.usePhraseHighlighter",
                "hl.usePhraseHighlighter", "q", "rows", "start", "wt")
 keys_group <- c("group.query","group.field", 'q', 'start', 'rows', 'sort',
