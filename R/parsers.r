@@ -203,7 +203,7 @@ solr_parse.sr_high <- function(input, parsetype='list', concat=',') {
       dat <- input$highlight
       df <- dplyr::bind_rows(lapply(dat, function(z) {
         dplyr::as_data_frame(lapply(z, function(w) {
-          if (length(w) > 1) paste0(w, collapse = "") else w
+          if (length(w) > 1) paste0(w, collapse = " ... ") else w
         }))
       }))
       if (NROW(df) == 0) {
