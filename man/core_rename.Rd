@@ -4,8 +4,7 @@
 \alias{core_rename}
 \title{Rename a core}
 \usage{
-core_rename(conn, name, other, async = NULL, raw = FALSE,
-  callopts = list())
+core_rename(conn, name, other, async = NULL, raw = FALSE, callopts = list())
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -35,10 +34,10 @@ Rename a core
 (conn <- SolrClient$new())
 
 # Status of particular cores
-path <- "~/solr-7.0.0/server/solr/testcore/conf"
+path <- "~/solr-8.2.0/server/solr/testcore/conf"
 dir.create(path, recursive = TRUE)
 files <- list.files(
-"~/solr-7.0.0/server/solr/configsets/sample_techproducts_configs/conf/",
+"~/solr-8.2.0/server/solr/configsets/sample_techproducts_configs/conf/",
 full.names = TRUE)
 invisible(file.copy(files, path, recursive = TRUE))
 conn$core_create("testcore") # or create in CLI: bin/solr create -c testcore

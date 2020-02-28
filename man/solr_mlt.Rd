@@ -4,17 +4,27 @@
 \alias{solr_mlt}
 \title{"more like this" search}
 \usage{
-solr_mlt(conn, name = NULL, params = NULL, body = NULL,
-  callopts = list(), raw = FALSE, parsetype = "df", concat = ",",
-  optimizeMaxRows = TRUE, minOptimizedRows = 50000L, progress = NULL,
-  ...)
+solr_mlt(
+  conn,
+  name = NULL,
+  params = NULL,
+  body = NULL,
+  callopts = list(),
+  raw = FALSE,
+  parsetype = "df",
+  concat = ",",
+  optimizeMaxRows = TRUE,
+  minOptimizedRows = 50000L,
+  progress = NULL,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
 
 \item{name}{Name of a collection or core. Or leave as \code{NULL} if not needed.}
 
-\item{params}{(list) a named list of parameters, results in a GET reqeust
+\item{params}{(list) a named list of parameters, results in a GET request
 as long as no body parameters given}
 
 \item{body}{(list) a named list of parameters, if given a POST request
@@ -110,6 +120,6 @@ solr_parse(out, "df")
 }
 }
 \references{
-See \url{http://wiki.apache.org/solr/MoreLikeThis} for more
-information.
+See https://lucene.apache.org/solr/guide/8_2/morelikethis.html
+for more information.
 }

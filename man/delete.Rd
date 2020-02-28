@@ -6,11 +6,31 @@
 \alias{delete_by_query}
 \title{Delete documents by ID or query}
 \usage{
-delete_by_id(conn, ids, name, commit = TRUE, commit_within = NULL,
-  overwrite = TRUE, boost = NULL, wt = "json", raw = FALSE, ...)
+delete_by_id(
+  conn,
+  ids,
+  name,
+  commit = TRUE,
+  commit_within = NULL,
+  overwrite = TRUE,
+  boost = NULL,
+  wt = "json",
+  raw = FALSE,
+  ...
+)
 
-delete_by_query(conn, query, name, commit = TRUE, commit_within = NULL,
-  overwrite = TRUE, boost = NULL, wt = "json", raw = FALSE, ...)
+delete_by_query(
+  conn,
+  query,
+  name,
+  commit = TRUE,
+  commit_within = NULL,
+  overwrite = TRUE,
+  boost = NULL,
+  wt = "json",
+  raw = FALSE,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -61,7 +81,9 @@ cli$delete_by_id(ids = 1, "gettingstarted")
 ## Many IDs
 cli$delete_by_id(ids = c(3, 4), "gettingstarted")
 
-# Delete by query
-cli$delete_by_query(query = "manu:bank", "gettingstarted")
+# Delete by query 
+cli$search("gettingstarted", params=list(q="*:*")) # apple is there
+cli$delete_by_query(query = 'id:apple', "gettingstarted") # delete it
+cli$search("gettingstarted", params=list(q='id:apple')) # apple is now gone
 }
 }

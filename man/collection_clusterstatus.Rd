@@ -4,8 +4,7 @@
 \alias{collection_clusterstatus}
 \title{Get cluster status}
 \usage{
-collection_clusterstatus(conn, name = NULL, shard = NULL,
-  raw = FALSE, ...)
+collection_clusterstatus(conn, name = NULL, shard = NULL, raw = FALSE, ...)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -20,7 +19,7 @@ Multiple shard names can be specified as a character vector.}
 \item{...}{You can pass in parameters like \code{property.name=value}    to set
 core property name to value. See the section Defining core.properties for
 details on supported properties and values.
-(https://lucene.apache.org/solr/guide/7_0/defining-core-properties.html)}
+(https://lucene.apache.org/solr/guide/8_2/defining-core-properties.html)}
 }
 \description{
 Fetch the cluster status including collections, shards,

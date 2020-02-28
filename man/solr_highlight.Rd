@@ -4,16 +4,24 @@
 \alias{solr_highlight}
 \title{Highlighting search}
 \usage{
-solr_highlight(conn, name = NULL, params = NULL, body = NULL,
-  callopts = list(), raw = FALSE, parsetype = "df",
-  progress = NULL, ...)
+solr_highlight(
+  conn,
+  name = NULL,
+  params = NULL,
+  body = NULL,
+  callopts = list(),
+  raw = FALSE,
+  parsetype = "df",
+  progress = NULL,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
 
 \item{name}{Name of a collection or core. Or leave as \code{NULL} if not needed.}
 
-\item{params}{(list) a named list of parameters, results in a GET reqeust
+\item{params}{(list) a named list of parameters, results in a GET request
 as long as no body parameters given}
 
 \item{body}{(list) a named list of parameters, if given a POST request
@@ -89,11 +97,11 @@ post text snippet. This parameter accepts per-field overrides. This parameter ma
 sense for the original Highlighter only.
 \item hl.simple.pre The text which appears before and after a highlighted term when using
 the simple formatter. This parameter accepts per-field overrides. The default values are
-"<em>" and "</em>" This parameter makes sense for the original Highlighter only. Use
+\code{<em>} and \code{</em>} This parameter makes sense for the original Highlighter only. Use
 hl.tag.pre and hl.tag.post for FastVectorHighlighter (see example under hl.fragmentsBuilder)
 \item hl.simple.post The text which appears before and after a highlighted term when using
 the simple formatter. This parameter accepts per-field overrides. The default values are
-"<em>" and "</em>" This parameter makes sense for the original Highlighter only. Use
+\code{<em>} and \code{</em>} This parameter makes sense for the original Highlighter only. Use
 hl.tag.pre and hl.tag.post for FastVectorHighlighter (see example under hl.fragmentsBuilder)
 \item hl.fragmenter Specify a text snippet generator for highlighted text. The standard
 fragmenter is gap (which is so called because it creates fixed-sized fragments with gaps
@@ -180,8 +188,8 @@ solr_parse(out, parsetype='list')
 }
 }
 \references{
-See \url{http://wiki.apache.org/solr/HighlightingParameters} for
-more information on highlighting.
+See https://lucene.apache.org/solr/guide/8_2/highlighting.html
+for more information on highlighting.
 }
 \seealso{
 \code{\link[=solr_search]{solr_search()}}, \code{\link[=solr_facet]{solr_facet()}}

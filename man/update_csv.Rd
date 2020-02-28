@@ -4,12 +4,30 @@
 \alias{update_csv}
 \title{Update documents with CSV data}
 \usage{
-update_csv(conn, files, name, separator = ",", header = TRUE,
-  fieldnames = NULL, skip = NULL, skipLines = 0, trim = FALSE,
-  encapsulator = NULL, escape = NULL, keepEmpty = FALSE,
-  literal = NULL, map = NULL, split = NULL, rowid = NULL,
-  rowidOffset = NULL, overwrite = NULL, commit = NULL, wt = "json",
-  raw = FALSE, ...)
+update_csv(
+  conn,
+  files,
+  name,
+  separator = ",",
+  header = TRUE,
+  fieldnames = NULL,
+  skip = NULL,
+  skipLines = 0,
+  trim = FALSE,
+  encapsulator = NULL,
+  escape = NULL,
+  keepEmpty = FALSE,
+  literal = NULL,
+  map = NULL,
+  split = NULL,
+  rowid = NULL,
+  rowidOffset = NULL,
+  overwrite = NULL,
+  commit = NULL,
+  wt = "json",
+  raw = FALSE,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -86,10 +104,9 @@ with &overwrite=false.}
 default is commit=false to avoid the potential performance impact of frequent commits.}
 
 \item{wt}{(character) One of json (default) or xml. If json, uses
-\code{\link[jsonlite]{fromJSON}} to parse. If xml, uses
-\code{\link[xml2]{read_xml}} to parse}
+\code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} to parse. If xml, uses \code{\link[xml2:read_xml]{xml2::read_xml()}} to parse}
 
-\item{raw}{(logical) If TRUE, returns raw data in format specified by
+\item{raw}{(logical) If \code{TRUE}, returns raw data in format specified by
 \code{wt} param}
 
 \item{...}{curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
@@ -99,17 +116,17 @@ Update documents with CSV data
 }
 \note{
 SOLR v1.2 was first version to support csv. See
-\url{https://issues.apache.org/jira/browse/SOLR-66}
+https://issues.apache.org/jira/browse/SOLR-66
 }
 \examples{
 \dontrun{
 # start Solr: bin/solr start -f -c -p 8983
 
 # connect
-(cli <- SolrClient$new())
+(conn <- SolrClient$new())
 
-if (!cli$collection_exists("helloWorld")) {
-  cli$collection_create(name = "helloWorld", numShards = 2)
+if (!conn$collection_exists("helloWorld")) {
+  conn$collection_create(name = "helloWorld", numShards = 2)
 }
 
 df <- data.frame(id=1:3, name=c('red', 'blue', 'green'))
@@ -123,7 +140,8 @@ conn$update_csv("df.csv", "helloWorld", wt = "json", raw = TRUE)
 }
 }
 \seealso{
-Other update: \code{\link{update_json}},
-  \code{\link{update_xml}}
+Other update: 
+\code{\link{update_json}()},
+\code{\link{update_xml}()}
 }
 \concept{update}

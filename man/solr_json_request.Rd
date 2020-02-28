@@ -4,8 +4,13 @@
 \alias{solr_json_request}
 \title{Solr json request}
 \usage{
-solr_json_request(conn, name = NULL, body = NULL, callopts = list(),
-  progress = NULL)
+solr_json_request(
+  conn,
+  name = NULL,
+  body = NULL,
+  callopts = list(),
+  progress = NULL
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -17,8 +22,8 @@ solr_json_request(conn, name = NULL, body = NULL, callopts = list(),
 \item{callopts}{Call options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 
 \item{progress}{a function with logic for printing a progress
-bar for an HTTP request, ultimately passed down to \pkg{curl}. only supports
-\code{httr::progress} for now. See the README for an example.}
+bar for an HTTP request, ultimately passed down to \pkg{curl}.
+only supports \code{httr::progress} for now. See the README for an example.}
 }
 \value{
 JSON character string
@@ -53,6 +58,6 @@ jsonlite::fromJSON(b)
 }
 }
 \references{
-See \url{https://lucene.apache.org/solr/guide/7_6/json-request-api.html}
+See https://lucene.apache.org/solr/guide/7_6/json-request-api.html
 for more information.
 }

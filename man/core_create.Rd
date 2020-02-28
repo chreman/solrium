@@ -4,10 +4,21 @@
 \alias{core_create}
 \title{Create a core}
 \usage{
-core_create(conn, name, instanceDir = NULL, config = NULL,
-  schema = NULL, dataDir = NULL, configSet = NULL,
-  collection = NULL, shard = NULL, async = NULL, raw = FALSE,
-  callopts = list(), ...)
+core_create(
+  conn,
+  name,
+  instanceDir = NULL,
+  config = NULL,
+  schema = NULL,
+  dataDir = NULL,
+  configSet = NULL,
+  collection = NULL,
+  shard = NULL,
+  async = NULL,
+  raw = FALSE,
+  callopts = list(),
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -28,9 +39,9 @@ For more information, see
 https://lucene.apache.org/solr/guide/6_6/config-sets.html}
 
 \item{collection}{(character) The name of the collection to which this core
-belongs. The default is the name of the core. collection.<param>=<val ue>
-causes a property of <param>=<value> to be set if a new collection is being
-created. Use collection.configNa me=<configname> to point to the
+belongs. The default is the name of the \verb{core.collection.<param>=<value>}
+causes a property of \verb{<param>=<value>} to be set if a new collection is being
+created. Use \verb{collection.configName=<configname>} to point to the
 configuration for a new collection.}
 
 \item{shard}{(character) The shard id this core represents. Normally you
@@ -62,9 +73,9 @@ Create a core
 (conn <- SolrClient$new())
 
 # Create a core
-path <- "~/solr-7.0.0/server/solr/newcore/conf"
+path <- "~/solr-8.2.0/server/solr/newcore/conf"
 dir.create(path, recursive = TRUE)
-files <- list.files("~/solr-7.0.0/server/solr/configsets/sample_techproducts_configs/conf/",
+files <- list.files("~/solr-8.2.0/server/solr/configsets/sample_techproducts_configs/conf/",
 full.names = TRUE)
 invisible(file.copy(files, path, recursive = TRUE))
 conn$core_create(name = "newcore", instanceDir = "newcore",

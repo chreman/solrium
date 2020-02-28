@@ -4,16 +4,25 @@
 \alias{solr_facet}
 \title{Faceted search}
 \usage{
-solr_facet(conn, name = NULL, params = list(q = "*:*"), body = NULL,
-  callopts = list(), raw = FALSE, parsetype = "df", concat = ",",
-  progress = NULL, ...)
+solr_facet(
+  conn,
+  name = NULL,
+  params = list(q = "*:*"),
+  body = NULL,
+  callopts = list(),
+  raw = FALSE,
+  parsetype = "df",
+  concat = ",",
+  progress = NULL,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
 
 \item{name}{Name of a collection or core. Or leave as \code{NULL} if not needed.}
 
-\item{params}{(list) a named list of parameters, results in a GET reqeust
+\item{params}{(list) a named list of parameters, results in a GET request
 as long as no body parameters given}
 
 \item{body}{(list) a named list of parameters, if given a POST request
@@ -369,7 +378,7 @@ solr_facet(cli, params = list(q='*:*', facet.field='computedStateFips'))
 }
 }
 \references{
-See \url{http://wiki.apache.org/solr/SimpleFacetParameters} for
+See https://lucene.apache.org/solr/guide/8_2/faceting.html for
 more information on faceting.
 }
 \seealso{

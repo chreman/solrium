@@ -1,3 +1,25 @@
+solrium 1.1.4
+=============
+
+### BUG FIXES
+
+* fixed typo in code that made the `delete_by_query()`/`$delete_by_query()` method not work correctly (#121) thanks @abhik1368 for the report
+
+
+solrium 1.1.0
+=============
+
+### MINOR IMPROVEMENTS
+
+* all `data_frame` and `as_data_frame` usage converted to `as_tibble` (#119)
+* change to markdown format docs
+* fix some examples and update some broken URLs
+
+### BUG FIXES
+
+* group queries were failing because when there were no group results AND when response metadata was available it lead to a bug because you can't set attributes on `NULL`  (#118)
+
+
 solrium 1.0.2
 =============
 

@@ -39,7 +39,7 @@ if (!conn$collection_exists("books")) {
 
 # Add documents
 file <- system.file("examples", "books.xml", package = "solrium")
-cat(readLines(file), sep = "\\n")
+cat(readLines(file), sep = "\n")
 conn$update_xml(file, "books")
 
 # get a document
@@ -74,5 +74,5 @@ conn$get(ids = '978-0641723445', "books", wt = "xml")
 }
 }
 \references{
-\url{https://lucene.apache.org/solr/guide/7_0/updating-parts-of-documents.html}
+https://lucene.apache.org/solr/guide/7_0/updating-parts-of-documents.html
 }

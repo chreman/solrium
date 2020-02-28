@@ -23,18 +23,18 @@ Development is now following Solr v7 and greater - which introduced many changes
 
 Be aware that currently some functions will only work in certain Solr modes, e.g, `collection_create()` won't work when you are not in Solrcloud mode. But, you should get an error message stating that you aren't.
 
-Currently developing against Solr `v7.4.0`
+Currently developing against Solr `v8.2.0`
 
 ## Solr info
 
-+ [Solr home page](http://lucene.apache.org/solr/)
-+ [Highlighting help](https://lucene.apache.org/solr/guide/7_0/highlighting.html)
-+ [Faceting help](http://wiki.apache.org/solr/SimpleFacetParameters)
-+ [Solr stats](http://wiki.apache.org/solr/StatsComponent)
-+ ['More like this' searches](http://wiki.apache.org/solr/MoreLikeThis)
-+ [Grouping/Feild collapsing](http://wiki.apache.org/solr/FieldCollapsing)
++ [Solr home page](https://lucene.apache.org/solr/)
++ [Highlighting help](https://lucene.apache.org/solr/guide/8_2/highlighting.html)
++ [Faceting help](https://lucene.apache.org/solr/guide/8_2/faceting.html)
++ [Solr stats](https://lucene.apache.org/solr/guide/8_2/the-stats-component.html)
++ ['More like this' searches](https://lucene.apache.org/solr/guide/8_2/morelikethis.html)
++ [Grouping/Feild collapsing](https://lucene.apache.org/solr/guide/8_2/collapse-and-expand-results.html)
 + [Install and Setup SOLR in OSX, including running Solr](http://risnandar.wordpress.com/2013/09/08/how-to-install-and-setup-apache-lucene-solr-in-osx/)
-+ [Solr csv writer](https://lucene.apache.org/solr/guide/7_0/response-writers.html#ResponseWriters-CSVResponseWriter)
++ [Solr csv writer](https://lucene.apache.org/solr/guide/8_2/response-writers.html#csv-response-writer)
 
 ## Package API and ways of using the package
 
@@ -252,7 +252,7 @@ invisible(cli$search(params = list(q='*:*', rows=100, fl='id'), progress = httr:
 
 ### Advanced: Function Queries
 
-Function Queries allow you to query on actual numeric fields in the SOLR database, and do addition, multiplication, etc on one or many fields to stort results. For example, here, we search on the product of counter_total_all and alm_twitterCount, using a new temporary field "_val_"
+Function Queries allow you to query on actual numeric fields in the SOLR database, and do addition, multiplication, etc on one or many fields to sort results. For example, here, we search on the product of counter_total_all and alm_twitterCount, using a new temporary field "_val_"
 
 ```{r}
 cli$search(params = list(q='_val_:"product(counter_total_all,alm_twitterCount)"',
@@ -359,6 +359,9 @@ conn$delete_by_query(name = "books", query = "manu:bank")
 * Please [report any issues or bugs](https://github.com/ropensci/solrium/issues)
 * License: MIT
 * Get citation information for `solrium` in R doing `citation(package = 'solrium')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc].
+By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropensci/solrium/blob/master/CODE_OF_CONDUCT.md

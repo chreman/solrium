@@ -1,7 +1,5 @@
 # CONTRIBUTING #
 
-## Please contribute!
-
 ## Bugs?
 
 * Submit an issue on the [Issues page](https://github.com/ropensci/solrium/issues) - be sure to include R session information and a reproducible example.
@@ -60,17 +58,10 @@ Make sure if you change what packages or even functions within packages are impo
 
 Be very conservative about adding new dependencies.
 
-
 ### Style
 
 * Make sure code, documentation, and comments are no more than 80 characters in width.
 * Use `<-` instead of `=` for assignment
 * Always use `snake_case` (and all lowercase) instead of `camelCase`
 
-
-
 ## Also, check out our [discussion forum](https://discuss.ropensci.org)
-
-## Prefer to Email? Get in touch: [scott@ropensci.org](mailto:scott@ropensci.org)
-
-## Thanks for contributing!

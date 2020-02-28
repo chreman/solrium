@@ -13,9 +13,9 @@
 #' For more information, see
 #' https://lucene.apache.org/solr/guide/6_6/config-sets.html
 #' @param collection (character) The name of the collection to which this core
-#' belongs. The default is the name of the core. collection.<param>=<val ue>
-#' causes a property of <param>=<value> to be set if a new collection is being
-#' created. Use collection.configNa me=<configname> to point to the
+#' belongs. The default is the name of the `core.collection.<param>=<value>`
+#' causes a property of `<param>=<value>` to be set if a new collection is being
+#' created. Use `collection.configName=<configname>` to point to the
 #' configuration for a new collection.
 #' @param shard (character) The shard id this core represents. Normally you
 #' want to be auto-assigned a shard id.
@@ -37,9 +37,9 @@
 #' (conn <- SolrClient$new())
 #'
 #' # Create a core
-#' path <- "~/solr-7.0.0/server/solr/newcore/conf"
+#' path <- "~/solr-8.2.0/server/solr/newcore/conf"
 #' dir.create(path, recursive = TRUE)
-#' files <- list.files("~/solr-7.0.0/server/solr/configsets/sample_techproducts_configs/conf/",
+#' files <- list.files("~/solr-8.2.0/server/solr/configsets/sample_techproducts_configs/conf/",
 #' full.names = TRUE)
 #' invisible(file.copy(files, path, recursive = TRUE))
 #' conn$core_create(name = "newcore", instanceDir = "newcore",

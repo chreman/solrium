@@ -32,12 +32,14 @@
 #' ## Many IDs
 #' cli$delete_by_id(ids = c(3, 4), "gettingstarted")
 #'
-#' # Delete by query
-#' cli$delete_by_query(query = "manu:bank", "gettingstarted")
+#' # Delete by query 
+#' cli$search("gettingstarted", params=list(q="*:*")) # apple is there
+#' cli$delete_by_query(query = 'id:apple', "gettingstarted") # delete it
+#' cli$search("gettingstarted", params=list(q='id:apple')) # apple is now gone
 #' }
 
 #' @export
-#' @name delete
+#' @rdname delete
 delete_by_id <- function(conn, ids, name, commit = TRUE, commit_within = NULL,
   overwrite = TRUE, boost = NULL, wt = 'json', raw = FALSE, ...) {
 
@@ -47,7 +49,7 @@ delete_by_id <- function(conn, ids, name, commit = TRUE, commit_within = NULL,
 }
 
 #' @export
-#' @name delete
+#' @rdname delete
 delete_by_query <- function(conn, query, name, commit = TRUE,
   commit_within = NULL, overwrite = TRUE, boost = NULL, wt = 'json',
   raw = FALSE, ...) {

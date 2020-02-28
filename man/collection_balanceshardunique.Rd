@@ -4,8 +4,15 @@
 \alias{collection_balanceshardunique}
 \title{Balance a property}
 \usage{
-collection_balanceshardunique(conn, name, property,
-  onlyactivenodes = TRUE, shardUnique = NULL, raw = FALSE, ...)
+collection_balanceshardunique(
+  conn,
+  name,
+  property,
+  onlyactivenodes = TRUE,
+  shardUnique = NULL,
+  raw = FALSE,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -29,7 +36,7 @@ an error message is returned}
 \item{...}{You can pass in parameters like \code{property.name=value}    to set
 core property name to value. See the section Defining core.properties for
 details on supported properties and values.
-(https://lucene.apache.org/solr/guide/7_0/defining-core-properties.html)}
+(https://lucene.apache.org/solr/guide/8_2/defining-core-properties.html)}
 }
 \description{
 Insures that a particular property is distributed evenly

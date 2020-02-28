@@ -4,17 +4,27 @@
 \alias{solr_search}
 \title{Solr search}
 \usage{
-solr_search(conn, name = NULL, params = list(q = "*:*"), body = NULL,
-  callopts = list(), raw = FALSE, parsetype = "df", concat = ",",
-  optimizeMaxRows = TRUE, minOptimizedRows = 50000L, progress = NULL,
-  ...)
+solr_search(
+  conn,
+  name = NULL,
+  params = list(q = "*:*"),
+  body = NULL,
+  callopts = list(),
+  raw = FALSE,
+  parsetype = "df",
+  concat = ",",
+  optimizeMaxRows = TRUE,
+  minOptimizedRows = 50000L,
+  progress = NULL,
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
 
 \item{name}{Name of a collection or core. Or leave as \code{NULL} if not needed.}
 
-\item{params}{(list) a named list of parameters, results in a GET reqeust
+\item{params}{(list) a named list of parameters, results in a GET request
 as long as no body parameters given}
 
 \item{body}{(list) a named list of parameters, if given a POST request
@@ -53,7 +63,7 @@ including facets, groups, mlt, stats, and highlights.
 }
 \note{
 SOLR v1.2 was first version to support csv. See
-\url{https://issues.apache.org/jira/browse/SOLR-66}
+https://issues.apache.org/jira/browse/SOLR-66
 }
 \section{Parameters}{
 
@@ -82,7 +92,7 @@ or a single character vector with one or more comma separated names, like
 \code{'id,title'}
 \item defType Specify the query parser to use with this request.
 \item timeAllowed The time allowed for a search to finish. This value only applies
-to the search and not to requests in general. Time is in milliseconds. Values <= 0
+to the search and not to requests in general. Time is in milliseconds. Values \code{<= 0}
 mean no time restriction. Partial results may be returned (if there are any).
 \item qt Which query handler used. Options: dismax, others?
 \item NOW Set a fixed time for evaluating Date based expresions
@@ -226,7 +236,7 @@ attr(res, "nextCursorMark")
 }
 }
 \references{
-See \url{http://wiki.apache.org/solr/#Search_and_Indexing}
+See https://lucene.apache.org/solr/guide/8_2/searching.html
 for more information.
 }
 \seealso{

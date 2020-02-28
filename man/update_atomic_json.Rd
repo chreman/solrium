@@ -39,7 +39,7 @@ if (!conn$collection_exists("books")) {
 
 # Add documents
 file <- system.file("examples", "books2.json", package = "solrium")
-cat(readLines(file), sep = "\\n")
+cat(readLines(file), sep = "\n")
 conn$update_json(file, "books")
 
 # get a document
@@ -68,5 +68,5 @@ conn$get(ids = 343334534545, "books")
 }
 }
 \references{
-\url{https://lucene.apache.org/solr/guide/7_0/updating-parts-of-documents.html}
+https://lucene.apache.org/solr/guide/7_0/updating-parts-of-documents.html
 }

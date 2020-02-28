@@ -4,9 +4,19 @@
 \alias{collection_addreplica}
 \title{Add a replica}
 \usage{
-collection_addreplica(conn, name, shard = NULL, route = NULL,
-  node = NULL, instanceDir = NULL, dataDir = NULL, async = NULL,
-  raw = FALSE, callopts = list(), ...)
+collection_addreplica(
+  conn,
+  name,
+  shard = NULL,
+  route = NULL,
+  node = NULL,
+  instanceDir = NULL,
+  dataDir = NULL,
+  async = NULL,
+  raw = FALSE,
+  callopts = list(),
+  ...
+)
 }
 \arguments{
 \item{conn}{A solrium connection object, see \link{SolrClient}}
@@ -36,7 +46,7 @@ asynchronously}
 \item{...}{You can pass in parameters like \code{property.name=value}    to set
 core property name to value. See the section Defining core.properties for details on
 supported properties and values.
-(https://cwiki.apache.org/confluence/display/solr/Defining+core.properties)}
+(https://lucene.apache.org/solr/guide/8_2/defining-core-properties.html)}
 }
 \description{
 Add a replica to a shard in a collection. The node name can be
